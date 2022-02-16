@@ -41,7 +41,7 @@
           <div class="site-project-item-content">
             <span>{{ delimit .Params.category ", " }}</span>
             <h3>{{ .Title }}</h3>
-            <a href="{{ .Permalink }}" class="read-more">相关信息</a>
+            <a href="{{ .Permalink }}" class="read-more">深入了解▸</a>
           </div>
         </div>
       </div>
@@ -55,6 +55,6 @@
   </div>
 </section>
 
-{{ partial "call-to-action.html" . }}
+<!-- {{ partial "call-to-action.html" . }} -->
 
 {{ end }}

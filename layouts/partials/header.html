@@ -1,4 +1,5 @@
 <nav class="navbar navbar-expand-lg site-navigation">
+  {{ $currentPageRelPermalink := .RelPermalink }}
   <div class="container">
     <a class="navbar-brand" href="{{ .Site.BaseURL }}">
       <img src="{{ "images/rs_logo.png" | absURL }}" alt="logo" />
@@ -34,7 +35,8 @@
           </li>
           {{ else }}
           <li class="nav-item">
-            <a class="nav-link" href="{{ .URL | absURL }}">
+            <a class="nav-link {{ if gt ((findRE .URL $currentPageRelPermalink) | len) 0 }}nav-link-active{{ end }}" 
+              href="{{ .URL | absURL }}">
               {{ .Name }}
             </a>
           </li>

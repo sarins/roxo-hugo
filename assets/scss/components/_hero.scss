@@ -14,7 +14,11 @@
     padding: 150px 0;
   }
   &-content{
+    h6{
+      color: $body-color;
+    }
     h1{
+      // color: $body-color;
       margin-bottom: 75px;
       @include desktop-lg{
         font-size: 50px;

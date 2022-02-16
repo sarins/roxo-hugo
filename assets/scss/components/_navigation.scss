@@ -35,6 +35,10 @@
       padding: 15px 18px;
       position: relative;
     }
+    .nav-link-active{
+      background-color: $secondary-color;
+      color: $body-color;
+    }
     &:last-child{
       margin-left: 15px;
     }
