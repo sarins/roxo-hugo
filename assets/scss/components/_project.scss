@@ -172,6 +172,12 @@
     }
   }
   &-single{
+    &-article{
+      padding: 200px 0 100px;
+      @include tablet{
+        padding: 100px 0;
+      }
+    }
     &-section{
       padding: 250px 0 100px;
       @include tablet{
@@ -206,7 +212,7 @@
     &-action{
       a{
         position: relative;
-        font-size: 24px;
+        font-size: 20px;
         font-weight: 300;
         color: $text-color-dark;
         display: flex;
@@ -236,7 +242,7 @@
           }
         }
         &:hover{
-          text-decoration: none;
+          text-decoration: underline;
           .link-area{
             span{
               transform: translateY(-150%) skewY(7deg);
