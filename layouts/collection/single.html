@@ -8,26 +8,44 @@
           <h1>
             {{ .Title }}
           </h1>
+          {{ if .Params.brief }}
+          <h2>
+            {{ .Params.brief }}
+          </h2>
+          {{ end }}
           <div class="site-project-single-description">
             {{ .Content }}
           </div>
-          <div class="site-project-single-image">
-            {{ range .Params.project_images }}
-            <img src="{{ . | absURL }}" alt="project image">
-            {{ end }}
+          <div class="row">
+            <div class="col-6">
+              {{ if .PrevInSection }}
+              <div class="site-project-single-action">
+                <a class= "prev-item" href="{{.PrevInSection.Permalink}}">
+                  <img src="{{ "images/to-top.svg" | absURL }}" alt="{{ .Site.Params.prevItemEn }}">
+                  <span class="link-area">
+                    <span data-text="{{ .Site.Params.prevItemEn }}">{{ .Site.Params.prevItem }}</span>
+                  </span>
+                </a>
+              </div>
+              {{ else }}
+              &nbsp;
+              {{ end }}
+            </div>
+            <div class="col-6">
+              {{ if .NextInSection }}
+              <div class="site-project-single-action">
+                <a class= "next-item" href="{{.NextInSection.Permalink}}">
+                  <span class="link-area">
+                    <span data-text="{{ .Site.Params.nextItemEn }}">{{ .Site.Params.nextItem }}</span>
+                  </span>
+                  <img src="{{ "images/to-top.svg" | absURL }}" alt="{{ .Site.Params.nextItemEn }}">
+                </a>
+              </div>
+              {{ else }}
+              &nbsp;
+              {{ end }}
+            </div>
           </div>
-          {{ if .NextInSection }}
-          <div class="site-project-single-action">
-            <a href="{{.NextInSection.Permalink}}">
-              <span class="link-area">
-                <span data-text="Next Project">
-                  Next Project
-                </span>
-              </span>
-              <img src="{{ "images/to-top.svg" | absURL }}" alt="next project">
-            </a>
-          </div>
-          {{ end }}
         </div>
       </div>
     </div>

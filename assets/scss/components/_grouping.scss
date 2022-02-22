@@ -1,4 +1,4 @@
-.site-block{
+.site-grouping{
   padding: 120px 0;
   overflow: hidden;
   &-item{
@@ -85,40 +85,12 @@
       0px 30px 45px 0px rgba(0, 0, 0, 0.02),
       0px 30px 45px 0px rgba(0, 0, 0, 0.03),
       0px 30px 45px 0px rgba(0, 0, 0, 0.04);
-      .site-block-item-content{
+      .site-grouping-item-content{
         a{
           transform: translateY(0);
           opacity: 1;
         }
         padding-bottom: 75px;
-      }
-    }
-  }
-  &-cta{
-    margin-top: 30px;
-    display: inline-block;
-    position: relative;
-    font-family: $secondary-font;
-    font-size: 18px;
-    font-weight: 500;
-    color: $primary-color;
-    &::before{
-      content: '';
-      position: absolute;
-      height: 2px;
-      width: 100%;
-      background: $primary-color;
-      bottom: -2px;
-      transition: transform 0.3s $site-ease;
-      transform-origin: right;
-      transform: scaleX(0);
-    }
-    &:hover{
-      color: $primary-color;
-      text-decoration: none;
-      &::before{
-        transform: scaleX(1);
-        transform-origin: left;
       }
     }
   }
@@ -207,14 +179,8 @@
     }
   }
   &-single{
-    &-article{
-      padding: 200px 0 100px;
-      @include tablet{
-        padding: 100px 0;
-      }
-    }
     &-section{
-      padding: 250px 0 100px;
+      padding: 200px 0 100px;
       @include tablet{
         padding: 100px 0;
       }
@@ -222,7 +188,12 @@
     h1{
       font-size: 40px;
       font-weight: 500;
-      margin-bottom: 40px;
+      margin-bottom: 24px;
+    }
+    h2{
+      font-size: 20px;
+      font-weight: 300;
+      margin-bottom: 24px;
     }
     &-image{
       display: flex;
@@ -252,7 +223,7 @@
         color: $text-color-dark;
         display: flex;
         margin-left: auto;
-        justify-content: flex-end;
+        //justify-content: flex-end;
         @include mobile{
           transform: translateX(-10px);
         }
@@ -288,10 +259,21 @@
           }
         }
       }
-      img{
-        filter: invert(1);
-        transform: rotate(90deg);
-        margin-left: 30px;
+      a.prev-item{
+        justify-content: flex-start;
+        img{
+          filter: invert(1);
+          transform: rotate(270deg);
+          margin-right: 30px;
+        }
+      }
+      a.next-item{
+        justify-content: flex-end;
+        img{
+          filter: invert(1);
+          transform: rotate(90deg);
+          margin-left: 30px;
+        }
       }
     }
   }
