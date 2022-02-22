@@ -41,3 +41,30 @@ h6{
   font-size: 15px;
   font-weight: 300;
 }
+
+.xl-text{
+  font-size: 20px;
+}
+
+.lg-text{
+  font-size: 18px;
+}
+
+.md-text{
+  font-size: 16px;
+}
+
+.sm-text{
+  font-size: 14px;
+}
+
+.xs-text{
+  font-size: 12px;
+}
+
+a{
+  color: $text-color;
+  &:hover{
+    color: $text-color;
+  }
+}

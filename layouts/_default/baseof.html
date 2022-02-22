@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ with .Site.LanguageCode }}{{ . }}{{ else }}en-US{{ end }}">
+<html lang="{{ with .Site.LanguageCode }}{{ . }}{{ else }}zh-CN{{ end }}">
     {{- partial "head.html" . -}}
     <body>
         {{- partial "header.html" . -}}
@@ -7,5 +7,6 @@
             {{- block "main" . }}{{- end }}
         </main>
         {{- partial "footer.html" . -}}
+        {{- partial "copyright.html" . -}}
     </body>
 </html>
