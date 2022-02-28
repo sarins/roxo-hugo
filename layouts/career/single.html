@@ -39,11 +39,13 @@
                       <h3>{{ .title }}</h3>
                     </div>
                     <div class="col-lg-3 col-md-12 mx-auto">
+                      <h5 style="text-align: end;">
                       {{ if .capacity }}
-                      <h5 style="text-align: end;">{{ .capacity }}名</h5>
+                      {{ .capacity }}名
                       {{ else }}
-                      &nbsp;
+                      不限名额
                       {{ end }}
+                      </h5>
                     </div>
                   </div>
                   {{ if and .tags (gt (len .tags) 0) }}

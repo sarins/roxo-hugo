@@ -1,6 +1,6 @@
 .site{
   &-blog{
-    @extend .site-project;
+    @extend .site-grouping;
     @include mobile{
       padding: 70px 0;
     }
@@ -30,15 +30,15 @@
       }
     }
     &-pagination{
-      @extend .site-project-pagination;
+      @extend .site-grouping-pagination;
     }
     &-post{
-      @extend .site-project-item;
+      @extend .site-grouping-item;
       &-thumb{
-        @extend .site-project-item-thumb;
+        @extend .site-grouping-item-thumb;
       }
       &-content{
-        @extend .site-project-item-content;
+        @extend .site-grouping-item-content;
         @include mobile{
           padding: 15px 25px 40px;
         }

@@ -1,6 +1,6 @@
 {{ with .Site.Params.features }}
   {{ if .enable }}
-  <section class="site-project" id="project">
+  <section class="site-grouping" id="grouping">
     <div class="container">
       <div class="row">
         <div class="col-12">
@@ -12,13 +12,17 @@
         <!-- range first 4 (sort (where $.Site.RegularPages "Type" "features") ".Params.seq") -->
         {{ range first 4 (sort (where $.Site.RegularPages "Type" "features") ".Params.date") }}
         <div class="col-lg-6 col-md-10 mx-auto">
-          <div class="site-project-item">
-            <div class="site-project-item-thumb">
+          <div class="site-grouping-item">
+            <div class="site-grouping-item-thumb">
               <a href="{{ .Permalink }}">
-                <img src="{{ .Params.Image | absURL }}" alt="project-thumb">
+                <div class="site-grouping-item-thumb-img" 
+                  style="background-image: url({{ .Params.Image }});">
+                  &nbsp;
+                </div>
+                <!-- <img src="{{ .Params.Image | absURL }}" alt="grouping-thumb"> -->
               </a>
             </div>
-            <div class="site-project-item-content">
+            <div class="site-grouping-item-content">
               <span>{{ .Params.subTitle }}</span>
               <h3>{{ .Title }}</h3>
               <a href="{{ .Permalink }}" class="read-more">{{ .Site.Params.readMore }}</a>
