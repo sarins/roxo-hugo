@@ -1,3 +1,11 @@
-<div class="container xs-text" style="text-align: center; padding: 20px 0;">
-  Copyright © 2016 - {{ now.Format "2006"}} RockSolid. All Rights Reserved. 顽石信息科技 版权所有
+<div class="container" style="padding: 20px 0;">
+  <div class="row">
+    {{ with .Site.Params.siteinfo }}
+    <div class="col-lg-2 col-md-6 xs-text">{{ .icp | safeHTML }}</div>
+    <div class="col-lg-8 col-md-6 xs-text" style="text-align: center;">
+      {{ .copyright_left | safeHTML }}{{ now.Format "2006"}}{{ .copyright_right | safeHTML }}
+    </div>
+    <div class="col-lg-2 col-md-6 xs-text">&nbsp;</div>
+    {{ end }}
+  </div>
 </div>

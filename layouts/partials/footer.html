@@ -1,19 +1,36 @@
 <footer class="site-footer">
   <div class="container">
     <div class="row">
-      {{ with .Site.Params.footer.contactInfo }}
+      {{ with .Site.Params.footer.sales }}
       <div class="col-lg-3 col-md-6">
         <div class="site-footer-widget">
           <h5 class="site-footer-widget-title">{{ .title }}</h5>
-          <p class="site-footer-widget-description sm-text">
-            {{ .address | safeHTML }}
-            <br/>
-            <!-- <a href="tel:{{ .phone }}">{{ .phone }}</a>
-            <br> -->
-            <a href="mailto:{{ .email }}">{{ .email }}</a>
-            <br/>
-            {{ .icp | safeHTML }}
-          </p>
+          <h4 class="site-footer-widget-title">{{ .tel }}</h4>
+          <h5 class="site-footer-widget-description">{{ .email }}</h5>
+        </div>
+      </div>
+      {{ end }}
+      {{ with .Site.Params.footer.res }}
+      <div class="col-lg-3 col-md-6">
+        <div class="site-footer-widget">
+          <h5 class="site-footer-widget-title">{{ .title }}</h5>
+          <ul class="site-footer-widget-links sm-text">
+            {{ range .link }}
+              <li><a href="{{ .url }}">{{ .name }}</a></li>
+            {{ end }}
+          </ul>
+        </div>
+      </div>
+      {{ end }}
+      {{ with .Site.Params.footer.links }}
+      <div class="col-lg-3 col-md-6">
+        <div class="site-footer-widget">
+          <h5 class="site-footer-widget-title">{{ .title }}</h5>
+          <ul class="site-footer-widget-links sm-text">
+            {{ range .item }}
+              <li><a href="{{ .url }}" target="_blank">{{ .name }}</a></li>
+            {{ end }}
+          </ul>
         </div>
       </div>
       {{ end }}
@@ -29,49 +46,10 @@
         </div>
       </div>
       {{ end }}
-      {{ with .Site.Params.footer.res }}
-      <div class="col-lg-2 col-md-6">
-        <div class="site-footer-widget">
-          <h5 class="site-footer-widget-title">{{ .title }}</h5>
-          <ul class="site-footer-widget-links sm-text">
-            {{ range .link }}
-              <li><a href="{{ .url }}">{{ .name }}</a></li>
-            {{ end }}
-          </ul>
-        </div>
-      </div>
-      {{ end }}
-      {{ with .Site.Params.footer.res }}
-      <div class="col-lg-2 col-md-6">
-        <div class="site-footer-widget">
-          <h5 class="site-footer-widget-title">{{ .title }}</h5>
-          <ul class="site-footer-widget-links sm-text">
-            {{ range .link }}
-              <li><a href="{{ .url }}">{{ .name }}</a></li>
-            {{ end }}
-          </ul>
-        </div>
-      </div>
-      {{ end }}
-      <!-- <div class="col-lg-3 col-md-6">&nbsp;</div> -->
-      {{ with .Site.Params.footer.service }}
-      <div class="col-lg-2 col-md-6">
-        <div class="site-footer-widget">
-          <h5 class="site-footer-widget-title">{{ .title }}</h5>
-          <p class="site-footer-widget-description">
-            {{ .description | safeHTML }}
-          </p>
-        </div>
-      </div>
-      {{ end }}
       <div class="col-lg-1 col-12">
         <a href="#top" class="site-footer-widget-top">
           <img src="{{ "images/to-top.svg" | absURL }}" alt="back-to-top">
-          <!-- <p>
-            I want to 
-            <br>
-            visit again
-          </p> -->
+          <p>再次浏览</p>
         </a>
       </div>
     </div>
