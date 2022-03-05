@@ -15,11 +15,7 @@
           <div class="site-grouping-item">
             <div class="site-grouping-item-thumb">
               <a href="{{ .Permalink }}">
-                <div class="site-grouping-item-thumb-img" 
-                  style="background-image: url({{ .Params.Image }});">
-                  &nbsp;
-                </div>
-                <!-- <img src="{{ .Params.Image | absURL }}" alt="grouping-thumb"> -->
+                <img src="{{ .Params.Image | absURL }}" alt="grouping-thumb">
               </a>
             </div>
             <div class="site-grouping-item-content">

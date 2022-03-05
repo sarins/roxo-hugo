@@ -62,9 +62,6 @@ h6{
   font-size: 12px;
 }
 
-a{
-  color: $text-color;
-  &:hover{
-    color: $text-color;
-  }
+.text-dark-gray{
+  color: $dark-gray;
 }

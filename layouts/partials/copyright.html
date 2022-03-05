@@ -1,11 +1,18 @@
-<div class="container" style="padding: 20px 0;">
+<div class="container py-20 text-dark-gray">
   <div class="row">
     {{ with .Site.Params.siteinfo }}
-    <div class="col-lg-2 col-md-6 xs-text">{{ .icp | safeHTML }}</div>
-    <div class="col-lg-8 col-md-6 xs-text" style="text-align: center;">
+    <div class="col-lg-2 col-md-6 col-sm-12 xs-text text-center">{{ .icp | safeHTML }}</div>
+    <div class="col-lg-8 col-md-6 col-sm-12 xs-text text-center">
       {{ .copyright_left | safeHTML }}{{ now.Format "2006"}}{{ .copyright_right | safeHTML }}
     </div>
     <div class="col-lg-2 col-md-6 xs-text">&nbsp;</div>
     {{ end }}
   </div>
 </div>
+
+{{ $mermaid := resources.Get "js/mermaid.js" | minify }}
+<script src="{{ $mermaid.Permalink }}"></script>
+{{ $vendor := resources.Get "js/vendor.js" | minify }}
+<script src="{{ $vendor.Permalink }}"></script>
+{{ $script := resources.Get "js/script.js" | minify }}
+<script src="{{ $script.Permalink }}"></script>

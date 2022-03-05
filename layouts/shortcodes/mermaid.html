@@ -1,0 +1,9 @@
+<div class="mermaid" align="{{ if .Get "align" }} {{ .Get "align" }} {{ else }} center {{ end }}">
+  {{ safeHTML .Inner }}
+</div>
+
+<script type="javascript">
+  mermaid.initialize({
+    sequence: {}
+  });
+</script>

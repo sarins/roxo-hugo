@@ -68,3 +68,33 @@ select.form-control{
 textarea.form-control{
   height: auto;
 }
+
+a{
+  color: $text-color;
+  &:hover{
+    color: $text-color;
+  }
+}
+
+blockquote {
+  background: $quote-gray;
+  border-left: 10px solid $dark-gray;
+  margin: 1.5em 10px;
+  padding: 0.5em 10px;
+}
+// blockquote:before {
+//   color: #ccc;
+//   content: counter(name);
+//   // content: open-quote;
+//   font-size: 4em;
+//   line-height: 0.1em;
+//   margin-right: 0.25em;
+//   vertical-align: -0.4em;
+// }
+blockquote p {
+  display: inline;
+}
+
+.py-20{
+  padding: 20px 0;
+}

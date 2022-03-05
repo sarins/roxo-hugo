@@ -1,0 +1,8 @@
+<div class="row">
+  <div class="col-lg-10 col-md-12 mx-auto">
+    <img src="{{ .Destination | safeURL }}" alt="{{ .Text }}" {{ with .Title}} title="{{ . }}"{{ end }} width="100%" class="img-thumbnail1" />
+  </div>
+  <div class="col-12 text-center sm-text py-20">
+    图-{{ .Text }} {{ .Title }}
+  </div>
+</div>
