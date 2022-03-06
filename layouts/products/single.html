@@ -1,6 +1,35 @@
 {{ define "main" }}
 
-<section class="site-grouping-single-section">
+{{ if .Params.image1 }}
+<section class="site-grouping-bg-header">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-8">
+        <div class="site-grouping-bg-header-bg">
+          <img src="{{ .Params.Image | absURL }}" alt="grouping-thumb">
+        </div>
+      </div>
+      <div class="col-lg-1"></div>
+      <div class="col-lg-2">
+        <a href="#grouping" class="nav-link btn btn-sm button-secondary btn-sm-rounded scroll-to">
+          <span class="btn-area">
+            <span data-text="我们开始吧">
+              进一步了解
+            </span>
+          </span>
+        </a>
+        <p></p>
+        <a href="#grouping" class="site-grouping-header-action scroll-to">
+          <img src="{{ "images/arrow-down.svg" | absURL }}" alt="arrow-down">
+        </a>
+      </div>
+      <div class="col-lg-1"></div>
+    </div>
+  </div>
+</section>
+{{ end }}
+
+<section class="site-grouping-single-section" id="grouping">
   <div class="container">
     <div class="row">
       <div class="col-lg-12 mx-auto">

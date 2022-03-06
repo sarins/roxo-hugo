@@ -56,12 +56,10 @@
       }
       h4{
         padding: 10px 0;
-        font-size: 20px;
         color: $text-color;
       }
       h5{
         padding: 10px 0;
-        font-size: 16px;
         color: $text-color;
       }
       &-line{
@@ -141,6 +139,17 @@
       }
     }
   }
+  &-bg-header{
+    padding: 0;
+    margin: 100px 0 -100px 0;
+    &-bg{
+      height: 300px;
+      overflow: hidden;
+      > img{
+        width: 100%;
+      }
+    }
+  }
   &-header{
     padding: 170px 0 100px;
     background: $gray;
@@ -149,21 +158,11 @@
     }
     &-content{
       h1{
-        font-size: 55px;
         span{
           color: $primary-color;
         }
         @include tablet{
           font-size: 40px;
-        }
-      }
-      h2{
-        font-size: 40px;
-        span{
-          color: $primary-color;
-        }
-        @include tablet{
-          font-size: 30px;
         }
       }
       @include desktop{
@@ -204,7 +203,6 @@
           margin-right: 10px;
         }
         .page-link{
-          font-size: 24px;
           border-radius: 0;
           border: none;
           padding: 12px 20px;
@@ -233,13 +231,13 @@
       }
     }
     h1{
-      font-size: 40px;
-      font-weight: 500;
+      font-weight: bold;
       margin-bottom: 24px;
     }
-    h2{
+    > span{
+      color: $text-color;
       font-size: 20px;
-      font-weight: 300;
+      font-weight: lighter;
       margin-bottom: 24px;
     }
     &-image{
@@ -264,9 +262,10 @@
     }
     &-action{
       a{
+        align-items: center;
         position: relative;
-        font-size: 20px;
-        font-weight: 300;
+        font-size: 18px;
+        font-weight: lighter;
         color: $text-color-dark;
         display: flex;
         margin-left: auto;
@@ -280,7 +279,7 @@
           span{
             position: relative;
             display: block;
-            padding: 2px 0;
+            padding: 2px 5px;
             transition: transform .9s cubic-bezier(.19,1,.22,1);
             transform-origin: left center;
             &::after{
@@ -295,6 +294,7 @@
           }
         }
         &:hover{
+          align-items: center;
           text-decoration: underline;
           .link-area{
             span{
@@ -311,7 +311,7 @@
         img{
           filter: invert(1);
           transform: rotate(270deg);
-          margin-right: 30px;
+          margin-right: 10px;
         }
       }
       a.next-item{
@@ -319,7 +319,7 @@
         img{
           filter: invert(1);
           transform: rotate(90deg);
-          margin-left: 30px;
+          margin-left: 10px;
         }
       }
     }

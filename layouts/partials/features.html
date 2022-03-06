@@ -5,12 +5,12 @@
       <div class="row">
         <div class="col-12">
           <div class="section-title">
-            <h2>{{ .title }}</h2>
-            <p>{{ .subtitle }}</p>
+            <h2>{{ .Title | safeHTML }}</h2>
+            <p>{{ .subtitle | safeHTML }}</p>
           </div>
         </div>
         <!-- range first 4 (sort (where $.Site.RegularPages "Type" "features") ".Params.seq") -->
-        {{ range first 4 (sort (where $.Site.RegularPages "Type" "features") ".Params.date") }}
+        {{ range first 6 (sort (where $.Site.RegularPages "Type" "products") ".Params.date") }}
         <div class="col-lg-6 col-md-10 mx-auto">
           <div class="site-grouping-item">
             <div class="site-grouping-item-thumb">

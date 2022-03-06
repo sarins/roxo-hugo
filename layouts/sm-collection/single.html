@@ -5,13 +5,9 @@
     <div class="row">
       <div class="col-lg-12 mx-auto">
         <div class="site-grouping-single">
-          <h1>
-            {{ .Title }}
-          </h1>
+          <h1>{{ .Title | safeHTML }}</h1>
           {{ if .Params.brief }}
-          <h2>
-            {{ .Params.brief }}
-          </h2>
+          <span>{{ .Params.brief | safeHTML }}</span>
           {{ end }}
           <div class="site-grouping-single-description">
             {{ .Content }}
