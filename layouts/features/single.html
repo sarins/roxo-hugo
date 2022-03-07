@@ -5,7 +5,12 @@
     <div class="row">
       <div class="col-lg-12 mx-auto">
         <div class="site-grouping-single">
-          <h1>{{ .Title | safeHTML }}</h1>
+          <h1>
+            {{ .Title | safeHTML }}
+            {{ if .Params.subTitle }}
+            <span>{{ .Params.subTitle | safeHTML }}</span>
+            {{ end }}
+          </h1>
           {{ if .Params.brief }}
           <span>{{ .Params.brief | safeHTML }}</span>
           {{ end }}

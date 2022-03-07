@@ -2,7 +2,7 @@
 //   scroll-behavior: smooth;
 // }
 
-body {
+body{
   background: $body-color;
 }
 
@@ -79,7 +79,7 @@ a{
   }
 }
 
-blockquote {
+blockquote{
   background: $quote-gray;
   border-left: 10px solid $dark-gray;
   margin: 1em 10px;
@@ -98,7 +98,7 @@ blockquote ul{
   color: $secondary-color;
   margin: 0.5em 0;
 }
-blockquote p {
+blockquote p{
   color: $primary-color;
   display: inline;
 }
