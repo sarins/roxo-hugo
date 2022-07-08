@@ -1,7 +1,7 @@
 {{ with .Site.Params.banner }}
   {{ if .enable }}
   {{ "<!-- Site Hero Start -->" | safeHTML }}
-  <section class="site-hero" style="background-image: url('{{ .background_image }}');">
+  <section class="site-hero hero-bg">
     <div class="container">
       <div class="row">
         <div class="col-lg-10 mx-auto">
@@ -19,7 +19,7 @@
                 </a>
               </li>
               <li>
-                <a href="{{ .b2_url | absURL }}" class="btn button-primary">
+                <a href="{{ .b2_url | absURL }}" class="btn button-secondary">
                   <span class="btn-area">
                     <span data-text="{{ .b2 }}">
                       {{ .b2 }}
@@ -28,7 +28,7 @@
                 </a>
               </li>
               <li>
-                <a href="{{ .b3_url | absURL }}" class="btn button-secondary">
+                <a href="{{ .b3_url | absURL }}" class="btn button-primary">
                   <span class="btn-area">
                     <span data-text="{{ .b3 }}">
                       {{ .b3 }}
