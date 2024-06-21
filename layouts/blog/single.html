@@ -1,0 +1,51 @@
+{{ define "main" }}
+
+<section class="site-main-block">
+  <div class="container site-markdown-page">
+    <div class="row">
+      <div class="col-12 mx-auto">
+        <div class="site-markdown-page-title">
+          <h1>{{ .Title | safeHTML }}</h1>
+          {{ if .Params.subtitle }}
+          <h4>{{ .Params.subtitle | safeHTML }}</h4>
+          {{ end }}
+          {{ if .Params.brief }}
+          <h5>{{ .Params.brief | safeHTML }}</h5>
+          {{ end }}
+          <div class="site-markdown-page-markdown">
+            {{ .Content }}
+          </div>
+        </div>
+      </div>
+    </div>
+    {{/* {{ with .GetTerms "tags" }}
+    <ul id="tags">
+      {{ range . }}
+      <li><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></li>
+      {{ end }}
+    </ul>
+    {{ end }} */}}
+    <div class="row">
+      <div class="col-6 text-left">
+        {{ if .PrevInSection }}
+        <a class="button-secondary btn-sm btn-sm-rounded" href="{{.PrevInSection.Permalink}}">
+          {{ .Site.Params.prevItemEn }}
+        </a>
+        {{ else }}
+        &nbsp;
+        {{ end }}
+      </div>
+      <div class="col-6 text-right">
+        {{ if .NextInSection }}
+        <a class="button-secondary btn-sm btn-sm-rounded" href="{{.NextInSection.Permalink}}">
+          {{ .Site.Params.nextItemEn }}
+        </a>
+        {{ else }}
+        &nbsp;
+        {{ end }}
+      </div>
+    </div>
+  </div>
+</section>
+
+{{ end }}

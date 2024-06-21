@@ -11,10 +11,3 @@
     {{ end }}
   </div>
 </div>
-
-{{ $mermaid := resources.Get "js/mermaid.js" | minify }}
-<script src="{{ $mermaid.Permalink }}"></script>
-{{ $vendor := resources.Get "js/vendor.js" | minify }}
-<script src="{{ $vendor.Permalink }}"></script>
-{{ $script := resources.Get "js/script.js" | minify }}
-<script src="{{ $script.Permalink }}"></script>

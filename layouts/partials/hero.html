@@ -1,59 +1,28 @@
-{{ with .Site.Params.banner }}
-  {{ if .enable }}
-  {{ "<!-- Site Hero Start -->" | safeHTML }}
-  <section class="site-hero hero-bg">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-10 mx-auto">
-          <div class="site-hero-content text-center">
-            <h6>{{ .tagline | safeHTML }}</h6>
-            <h1>{{ .heading | safeHTML }}</h1>
-            <ul class="site-hero-content-buttons">
-              <li>
-                <a href="{{ .b1_url | absURL }}" class="btn button-primary">
-                  <span class="btn-area">
-                    <span data-text="{{ .b1 }}">
-                      {{ .b1 }}
-                    </span>
-                  </span>
-                </a>
-              </li>
-              <li>
-                <a href="{{ .b2_url | absURL }}" class="btn button-secondary">
-                  <span class="btn-area">
-                    <span data-text="{{ .b2 }}">
-                      {{ .b2 }}
-                    </span>
-                  </span>
-                </a>
-              </li>
-              <li>
-                <a href="{{ .b3_url | absURL }}" class="btn button-primary">
-                  <span class="btn-area">
-                    <span data-text="{{ .b3 }}">
-                      {{ .b3 }}
-                    </span>
-                  </span>
-                </a>
-              </li>
-              <li>
-                <a href="{{ .b4_url | absURL }}" class="btn button-secondary">
-                  <span class="btn-area">
-                    <span data-text="{{ .b4 }}">
-                      {{ .b4 }}
-                    </span>
-                  </span>
-                </a>
-              </li>
-            </ul>
-          </div>
+{{ if .Site.Params.banner.enable }}
+{{ "<!-- Site Hero Start -->" | safeHTML }}
+<section class="site-hero hero-bg">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 mx-auto">
+        {{ with .Site.Params.banner }}
+        <div class="site-hero-banner text-center">
+          <h5>{{ .slogan | safeHTML }}</h5>
+          <h1>{{ .title | safeHTML }}</h1>
         </div>
+        {{ end }}
+        {{ if .Site.Taxonomies.categories }}
+        <div class="site-tags">
+          {{ range .Site.Taxonomies.categories }}
+          <div class="site-tags-item">
+            <a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a>
+            {{/*  <a href="{{ .Page.Permalink }}">{{ .Page.Title }}({{ .Count }})</a>  */}}
+          </div>
+          {{ end }}
+        </div>
+        {{ end }}
       </div>
     </div>
-    <a href="#counter" class="site-hero-scroll scroll-to">
-      <img src="images/arrow-down.svg" alt="arrow-down">
-    </a>
-  </section>
-  {{ "<!-- Site Hero End -->" | safeHTML }}
-  {{ end }}
+  </div>
+</section>
+{{ "<!-- Site Hero End -->" | safeHTML }}
 {{ end }}

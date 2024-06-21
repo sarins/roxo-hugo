@@ -1,0 +1,29 @@
+{{ define "main" }}
+
+<section class="site-main-block">
+  {{ partial "paginate-blog.html" . }}
+  {{/* <div class="container site-list">
+    <!-- .Pages.ByDate.Reverse -->
+    <!-- (.Paginate (.Pages.ByDate) .Params.pagination).Pages -->
+    {{ range (.Paginate (.Pages.ByDate.Reverse) 10).Pages }}
+    <div class="row site-list-item">
+      <div class="col-lg-9 col-md-12 mx-auto my-auto">
+        <h4>
+          <a href="{{ .Permalink }}">{{ .Title }}</a>
+        </h4>
+        <h5>{{ .Params.subtitle }}</h5>
+      </div>
+      <div class="col-lg-3 col-md-12 mx-auto my-auto text-right secondary-color">
+        {{ .Params.date | time.Format ":date_medium" }}
+      </div>
+    </div>
+    {{ end }}
+    <div class="row">
+      <div class="col-12 mx-auto site-pagination">
+        {{ template "_internal/pagination.html" . }}
+      </div>
+    </div>
+  </div> */}}
+</section>
+
+{{ end }}

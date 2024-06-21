@@ -1,0 +1,33 @@
+{{ define "main" }}
+
+<section class="site-main-block">
+  {{ if eq .Page.Kind "term" }}
+  {{ partial "paginate-blog.html" . }}
+  {{ else }}
+  <div class="container site-grid">
+    <div class="row">
+      {{ range (.Paginator 24).Pages }}
+      <div class="col-lg-4 col-md-6">
+        <div class="site-grid-item">
+          <h4>
+            <a href="{{ .Permalink }}">
+              <div class="row justify-content-between align-items-baseline">
+                <div class="col-8 text-left text-truncate">{{ .Title }}</div>
+                <div class="col-4 text-right sm-text">{{ .Pages.Len }} Page(s)</div>
+              </div>
+            </a>
+          </h4>
+        </div>
+      </div>
+      {{ end }}
+    </div>
+    <div class="row">
+      <div class="col-12 mx-auto site-pagination">
+        {{ template "_internal/pagination.html" . }}
+      </div>
+    </div>
+  </div>
+  {{ end }}
+</section>
+
+{{ end }}
