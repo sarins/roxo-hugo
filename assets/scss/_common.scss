@@ -112,6 +112,35 @@ blockquote p {
   display: inline;
 }
 
+// @mixin mx-table-bordered {
+//   @extend .table-bordered;
+// }
+
+// @mixin mx-table-striped {
+//   @extend .table-striped;
+// }
+
+// @mixin mx-table {
+//   @extend .table;
+// }
+
+// table {
+//   @include mx-table-bordered;
+//   @include mx-table-striped;
+//   @include mx-table;
+// }
+
+// table {
+//   border-collapse: collapse;
+//   width: 100%;
+// }
+
+// td {
+//   border-top: 1px solid #ccc;
+//   border-bottom: 1px solid #ccc;
+//   padding: 0.6rem;
+// }
+
 .py-20 {
   padding: 20px 0;
 }
