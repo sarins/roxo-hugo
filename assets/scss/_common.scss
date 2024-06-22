@@ -112,49 +112,44 @@ blockquote p {
   display: inline;
 }
 
-// @mixin mx-table-bordered {
-//   @extend .table-bordered;
-// }
+// import table related from bootstrap 4.6.2
+// begin
+table {
+  width: 100%;
+  margin-bottom: 1rem;
+  color: $text-color;
+  border: 1px solid $table-border;
 
-// @mixin mx-table-striped {
-//   @extend .table-striped;
-// }
+  th,
+  td {
+    padding: 0.75rem;
+    vertical-align: top;
+    border: 1px solid $table-border;
+  }
 
-// @mixin mx-table {
-//   @extend .table;
-// }
+  thead {
+    th {
+      vertical-align: bottom;
+      border-bottom: 2px solid $table-border;
+    }
 
-// table {
-//   @include mx-table-bordered;
-//   @include mx-table-striped;
-//   @include mx-table;
-// }
+    td {
+      border-bottom-width: 2px;
+    }
+  }
 
-// table {
-//   border-collapse: collapse;
-//   width: 100%;
-// }
+  tbody {
+    tr:nth-of-type(odd) {
+      background-color: $table-striped;
+    }
+  }
 
-// td {
-//   border-top: 1px solid #ccc;
-//   border-bottom: 1px solid #ccc;
-//   padding: 0.6rem;
-// }
-
-.py-20 {
-  padding: 20px 0;
+  tbody+tbody {
+    border-top: 2px solid $table-border;
+  }
 }
 
-.text-dark-gray {
-  color: $dark-gray;
-}
-
-.rs-gradient-bg {
-  background-color: $secondary-color;
-  opacity: 1;
-  background-image: radial-gradient(circle at center center, #FFFFFF, $secondary-color), repeating-radial-gradient(circle at center center, #FFFFFF, #FFFFFF, 13px, transparent 26px, transparent 13px);
-  background-blend-mode: multiply;
-}
+// end
 
 .hero-bg {
   background-color: #{$secondary-color}55;

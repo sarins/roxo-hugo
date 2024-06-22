@@ -18,18 +18,29 @@
         </div>
       </div>
     </div>
-    {{/* {{ with .GetTerms "tags" }}
-    <ul id="tags">
-      {{ range . }}
-      <li><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></li>
-      {{ end }}
-    </ul>
-    {{ end }} */}}
-    <div class="row">
+    <div class="row py-4">
+      <div class="card border-secondary mb-3" style="width: 100%;">
+        <div class="card-body text-secondary">
+          <div class="card-text">
+            <b>作者|Author: </b> {{ .Site.Params.author }}
+          </div>
+          <div class="card-text">
+            <b>发表日期|Publish Date: </b> {{ .Date | time.Format ":date_medium" }}
+          </div>
+          <div class="card-text">
+            <b>修改日期|Modified Date: </b> {{ .Lastmod | time.Format ":date_medium" }}
+          </div>
+          <div class="card-text">
+            <b>版权许可|Copyright License: </b> {{ .Site.Params.copyright.license | safeHTML }}
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row py-4">
       <div class="col-6 text-left">
         {{ if .PrevInSection }}
         <a class="button-secondary btn-sm btn-sm-rounded" href="{{.PrevInSection.Permalink}}">
-          {{ .Site.Params.prevItemEn }}
+          {{ .Site.Params.const.prev }}
         </a>
         {{ else }}
         &nbsp;
@@ -38,7 +49,7 @@
       <div class="col-6 text-right">
         {{ if .NextInSection }}
         <a class="button-secondary btn-sm btn-sm-rounded" href="{{.NextInSection.Permalink}}">
-          {{ .Site.Params.nextItemEn }}
+          {{ .Site.Params.const.next }}
         </a>
         {{ else }}
         &nbsp;

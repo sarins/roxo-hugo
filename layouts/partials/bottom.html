@@ -1,4 +1,4 @@
-
+{{ template "_internal/google_analytics.html" . }}
 {{ $mermaid := resources.Get "js/mermaid.js" | minify }}
 <script src="{{ $mermaid.Permalink }}"></script>
 {{ $vendor := resources.Get "js/vendor.js" | minify }}
