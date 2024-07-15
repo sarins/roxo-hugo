@@ -3,3 +3,4 @@
 <script src="{{ $mermaid.Permalink }}"></script>
 {{ $vendor := resources.Get "js/vendor.js" | minify }}
 <script src="{{ $vendor.Permalink }}"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>

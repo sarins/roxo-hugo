@@ -13,6 +13,9 @@
           <h5>{{ .Params.brief | safeHTML }}</h5>
           {{ end }}
           <div class="site-markdown-page-markdown">
+            {{ if .Param "math" }}
+            {{ partialCached "math.html" . }}
+            {{ end }}
             {{ .Content }}
           </div>
         </div>
