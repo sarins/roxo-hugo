@@ -119,6 +119,8 @@ table {
   margin-bottom: 1rem;
   color: $text-color;
   border: 1px solid $table-border;
+  display: block;
+  overflow-x: auto;
 
   th,
   td {
