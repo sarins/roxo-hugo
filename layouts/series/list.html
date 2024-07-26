@@ -5,7 +5,7 @@
   {{ partial "paginate-blog.html" . }}
   {{ else }}
   <div class="container site-list">
-    {{ range (.Paginator 10).Pages }}
+    {{ range (.Paginator 10).Pages.ByTitle }}
     <div class="row site-list-item">
       <div class="col-lg-9 col-md-12 mx-auto my-auto">
         <h4>

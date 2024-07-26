@@ -8,7 +8,7 @@
     <div class="row">
       <div class="site-tags">
         {{/* {{ range sort .Site.Taxonomies.tags }} */}}
-        {{ range (.Paginator 32).Pages }}
+        {{ range (.Paginator 32).Pages.ByTitle }}
         <div class="site-tags-item">
           <a href="{{ .Permalink }}">{{ .Title }} - {{ .Pages.Len }} Page(s)</a>
         </div>

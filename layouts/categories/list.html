@@ -6,7 +6,7 @@
   {{ else }}
   <div class="container site-grid">
     <div class="row">
-      {{ range (.Paginator 24).Pages }}
+      {{ range (.Paginator 24).Pages.ByTitle }}
       <div class="col-lg-4 col-md-6">
         <div class="site-grid-item">
           <h4>
